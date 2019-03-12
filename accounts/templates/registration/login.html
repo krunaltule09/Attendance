@@ -7,14 +7,16 @@
 <br>
 
 <div class="container">
-  <h3>Signup Form</h3>
+  <h3>Login Form</h3>
   <hr>
-  <form class="" action="{% url 'accounts:signup' %}" method="post">
+  <form  method="POST">
     {% csrf_token %}
 
     {{ form.as_p }}
 
-    <button type="submit" class="btn btn-primary">Signup</button>
+ 
+
+    <button type="submit" class="btn btn-primary">Login</button>
   </form>
 </div>
 

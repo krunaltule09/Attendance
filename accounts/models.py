@@ -1,6 +1,5 @@
 
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
-from django.contrib.auth import get_user_model
 from django.db import models
 
 class UserManager(BaseUserManager):
@@ -72,6 +71,9 @@ class User(AbstractBaseUser):
 	def get_short_name(self):
 		return self.email
 
+	def get_username(self):
+		return self.username
+
 	def has_perm(self,perm,obj=None):
 		return True
 
@@ -108,16 +110,5 @@ class User(AbstractBaseUser):
 
 
 
-User=get_user_model()
-class Student(models.Model):
-	user       =models.OneToOneField(User,on_delete=models.CASCADE)
-	firstname  =models.CharField(max_length=50,null=True,blank=True)
-	lastname   =models.CharField(max_length=50,null=True,blank=True)
-	panel      =models.IntegerField()
-
-
-
-	def __str__(self):
-		return (self.firstname+""+self.lastname)
 
 
