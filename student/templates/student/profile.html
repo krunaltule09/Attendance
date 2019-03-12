@@ -1,0 +1,23 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+<h1>hello {{name}}</h1>
+<h3>roll number:-{{rollnumber}}</h3>
+<h3>panel:-{{panel}}</h3>
+<div class="container">
+	<h5><b>!!!!!!!!Your Attendance!!!!!!!!</b></h5> <br>
+	Operating System:-{{os}} <br>
+	Microprocessor and Microcontroller:-{{mmc}} <br>
+	Software Engineering and Project Management:-{{sepm}} <br>
+	Indian Constitution:-{{ic}} <br>
+	Data Structure 2:-{{ds2}} <br>		
+
+</div>
+
+{% else %}
+<h1>you need to log in</h1>
+{% endif %}
+
+{% endblock %}

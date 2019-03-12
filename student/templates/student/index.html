@@ -4,7 +4,9 @@
 {% block content %}
 {% if user.is_authenticated %}
 <h1>hello {{user.username}}</h1>
+<a href="{% url 'profile' %}">visit profile</a>
 {% else %}
+
 <h1>you need to log in</h1>
 {% endif %}
 

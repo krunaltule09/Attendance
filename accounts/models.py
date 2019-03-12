@@ -74,6 +74,9 @@ class User(AbstractBaseUser):
 	def get_username(self):
 		return self.username
 
+	def get_user_id(self):
+		return self.id
+
 	def has_perm(self,perm,obj=None):
 		return True
 
