@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class='container'>
+<h1>   Name:-{{name}} </h1>
+<h3>   Subject:-{{subject}}</h3>
+ 
+ <a href="{% url 'teacher:requested' %} ">request code</a>
+
+</div>
+
+{% else %}
+<h1>you need to log in</h1>
+{% endif %}
+
+{% endblock %}

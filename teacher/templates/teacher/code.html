@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="alert alert-success">
+  <strong>Success!</strong> todays code is:<div style="font-size: 30;">{{code}}</div>.
+</div>
+
+{% else %}
+<h1>you need to log in</h1>
+{% endif %}
+
+{% endblock %}

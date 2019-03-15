@@ -5,8 +5,9 @@ app_name = 'student'
 
 
 urlpatterns = [
-	path('', HomePageView,name='index'),
+	# path('', HomePageView,name='index'),
 	path('profile/', Profile,name='profile'),
+	
 
 
 ]

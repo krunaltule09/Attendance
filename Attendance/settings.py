@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'teacher',
     'student',
     'accounts',
     'import_export',
@@ -137,6 +138,6 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT_URL='student:profile'
+LOGIN_REDIRECT_URL='home'
 LOGIN_URL='login'
-LOGIN_SUCCESS_URL='student:profile'
+LOGIN_SUCCESS_URL='home'
