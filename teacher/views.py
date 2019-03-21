@@ -7,6 +7,10 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 import random
 import string
+from accounts.models import Panel
+from .models import SecretCode
+from django.utils import timezone
+
 
 User=get_user_model()
 
@@ -29,21 +33,36 @@ def Profile(request):
 
 
 @login_required
-def RandomCodeGenerator(request):
-    chars = string.ascii_letters + string.digits
-    size = 12
-    code=random_string_generator(size, chars)
-    return render(request,'teacher/code.html',{'code':code})
+def RandomCodeGenerator(request,panel_number):
 
+    chars =string.digits
+    size = 8
+    code=random_string_generator(size, chars)
+    code_obj=SecretCode()
+    code_obj.code=code
+    code_obj.teacher_username=request.user.username
+    panel=Panel.objects.get(panel_number=panel_number)
+    code_obj.panel=panel
+    code_obj.date_time_created=timezone.now()
+    code_obj.save()
+    context={
+    'code':code,
+    }
+    # return HttpResponseRedirect(reverse("", kwargs={'pk': pk}))
+    return render(request,'teacher/code.html',context)
 
 def random_string_generator(str_size, allowed_chars):
     return ''.join(random.choice(allowed_chars) for x in range(str_size))
 
-    chars = string.ascii_letters + string.digits
-    size = 12
 
-    print(chars)
-    print('Random String of length 12 =', random_string_generator(size, chars))
 
 def Button(request):
     return render(request, 'teacher/button.html',{})
+
+
+def PanelListView(request):
+    list_of_panels=Panel.objects.all()
+    context={
+    'panel_list':list_of_panels,
+    }
+    return render(request,"teacher/panel_list.html",context)

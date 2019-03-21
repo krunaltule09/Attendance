@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from import_export.admin import ImportExportModelAdmin
 from .resources import StudentResource,UserResource
 from import_export import resources
+from .models import Subject,Panel
 
 # from .forms import UserAdminCreationForm, UserAdminChangeForm
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
@@ -47,6 +48,9 @@ class UserModelAdmin(ImportExportModelAdmin):
 # ---------------------------------------------------------
 # admin.site.register(UserModelAdmin)
 admin.site.register(User,UserModelAdmin)
+admin.site.register(Subject)
+admin.site.register(Panel)
+
 
 
 

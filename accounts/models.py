@@ -109,8 +109,17 @@ class User(AbstractBaseUser):
 
 
 
+class Subject(models.Model):
+	name=models.CharField(max_length=50,null=False)
+	subject_code=models.CharField(max_length=6,null=False,unique=True)
 
 
+	def __str__(self):
+		return self.name
+
+
+class Panel(models.Model):
+	panel_number=models.IntegerField(blank=False,unique=True)
 
 
 

@@ -3,6 +3,8 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+<div class="container">
+
 <h1>hello {{name}}</h1>
 <h3>roll number:-{{rollnumber}}</h3>
 <h3>panel:-{{panel}}</h3>
@@ -13,7 +15,7 @@
 	Software Engineering and Project Management:-{{sepm}} <br>
 	Indian Constitution:-{{ic}} <br>
 	Data Structure 2:-{{ds2}} <br>		
-
+</div>
 </div>
 
 {% else %}
