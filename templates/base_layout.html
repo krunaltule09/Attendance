@@ -25,6 +25,7 @@
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'student:profile'  %}">Profile</a></li>
                   <li><a href="{% url 'logout' %}">logout</a></li>
+                  <li><a href="{% url 'student:attendance' %}">give attendance</a></li>
                 {% else %}
                   <li><a href="{% url 'login' %}">login</a></li>
                  {% endif %} 

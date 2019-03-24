@@ -34,3 +34,18 @@ def LoginView(request):
         form=LoginForm()
 
     return render(request,"registration/login.html",{"form":form})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

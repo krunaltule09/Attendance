@@ -48,6 +48,9 @@ def RandomCodeGenerator(request,panel_number):
     context={
     'code':code,
     }
+ 
+
+
     # return HttpResponseRedirect(reverse("", kwargs={'pk': pk}))
     return render(request,'teacher/code.html',context)
 

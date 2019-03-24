@@ -17,7 +17,7 @@ class Teacher(models.Model):
         return str(self.user)
 
 class SecretCode(models.Model):
-    code               =models.CharField(max_length=12)
+    code               =models.IntegerField()
     teacher_username   =models.IntegerField(default=0,null=False,blank=False)
     date_time_created  =models.DateTimeField(auto_now_add=False)
     panel              =models.ForeignKey(Panel,on_delete=models.CASCADE)

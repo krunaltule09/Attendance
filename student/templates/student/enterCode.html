@@ -1,0 +1,17 @@
+!{% extends 'base_layout.html' %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+<form method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+	<button type="submit">Submit</button>
+</form>
+
+{% else %}
+
+<h1>you need to log in</h1>
+{% endif %}
+
+{% endblock %}

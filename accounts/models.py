@@ -122,5 +122,8 @@ class Panel(models.Model):
 	panel_number=models.IntegerField(blank=False,unique=True)
 
 
+	def __str__(self):
+		return str(self.panel_number) 
+
 
 
